@@ -27,7 +27,7 @@ rsync -avz -e "ssh -i $ssh_key_path" backend/ root@$deploy_dir/backend
 
 rsync -avz -e "ssh -i $ssh_key_path"  frontend/build/ root@$deploy_dir
 
-ssh -i $ssh_key_path root@$deploy_host "cd $deploy_path/backend && npm install && /root/.nvm/versions/node/v19.7.0/bin/pm2 restart likeme_test"
+ssh -i $ssh_key_path root@$deploy_host "cd $deploy_path/backend && npm install --legacy-peer-deps && /root/.nvm/versions/node/v19.7.0/bin/pm2 restart likeme_test"
 
 
 ssh -i $ssh_key_path root@$deploy_host "[ -d $deploy_path/uploads_temp ]"
