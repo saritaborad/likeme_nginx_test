@@ -21,12 +21,6 @@ jobs:
       SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       SSH_PRIVATE_KEY_NGINX: ${{ secrets.SSH_PRIVATE_KEY_NGINX }}
 
-   - name: Debugging Output
-     run: |
-       echo "Hostname: $(hostname)"
-       echo "SSH_PRIVATE_KEY_NGINX: $SSH_PRIVATE_KEY_NGINX"
-       cat ~/.ssh/known_hosts
-
 
    - name: Configure SSH key for Nginx
      run: |
