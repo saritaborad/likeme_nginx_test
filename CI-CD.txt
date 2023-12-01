@@ -1,1 +1,34 @@
 => steps to add ci-cd on server 
+
+=> check for id_rsa and id_rsa.pub key exist or not 
+if not
+1) generate ssh key 
+=> ssh-keygen -t rsa -b 4096
+=> ls ~/.ssh/
+=> it will generate id_rsa and id_rsa.pub key 
+
+2) add private key in git inside directory
+ => setting => secrete and variable => actions => new repository secret 
+
+=> get key from server  
+=> cat ~/.ssh/id_rsa
+=> copy content and add it 
+=> put whole key with -----BEGIN OPENSSH PRIVATE KEY----- <key> -----END OPENSSH PRIVATE KEY-----
+
+3) add deploy key 
+ => setting => deploy keys => add deploy key 
+
+ => get key from server 
+ => cat ~/.ssh/id_rsa.pub
+ => copy content and add it with any name
+
+4) look for ssh agent exists or not 
+ssh-add -l
+if not add it
+=> ssh-add ~/.ssh/id_rsa
+
+
+4) add yml file 
+=> in git repo => actions tab => create yml file 
+
+5) create deploy.sh file on server

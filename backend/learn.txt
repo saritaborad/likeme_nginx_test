@@ -9,6 +9,8 @@ to give permission to access folder from server
 chmod u+rwx
 
 
+
 => generate ssh key 
 => ssh-keygen -t rsa -b 4096
 => ls ~/.ssh/
+
