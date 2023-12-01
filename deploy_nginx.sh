@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the deployment directory on the server
-deploy_host="pikso.in"
+deploy_host="BD-Video"
 deploy_path="/var/www/html/likeme_test"
 deploy_dir="$deploy_host:$deploy_path"
 ssh_key_path="$HOME/.ssh/id_rsa"  # Adjust the path based on your actual key location
@@ -9,7 +9,7 @@ ssh_key_path="$HOME/.ssh/id_rsa"  # Adjust the path based on your actual key loc
 # Save the 'uploads' folder path
 uploads_folder="$deploy_path/backend/uploads"
 
-# Ensure correct permissions for the SSH keyk
+# Ensure correct permissions for the SSH key
 chmod 600 $ssh_key_path 
 
 # Check if the 'uploads' folder exists on the server
