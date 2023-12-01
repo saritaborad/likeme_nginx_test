@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the deployment directory on the server
-deploy_host="BD-Video"
+deploy_host="pikso.in"
 deploy_path="/var/www/html/likeme_test"
 deploy_dir="$deploy_host:$deploy_path"
 ssh_key_path="$HOME/.ssh/id_rsa"  # Adjust the path based on your actual key location
