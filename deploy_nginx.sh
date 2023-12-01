@@ -12,7 +12,7 @@ uploads_folder="$deploy_path/backend/uploads"
 # Ensure correct permissions for the SSH key
 chmod 600 $ssh_key_path 
 
-# Check if the 'uploads' folder exists on the server
+# Check if the 'uploads' folder exists on the server/
 ssh -i $ssh_key_path root@$deploy_host "[ -d $uploads_folder ]"
 if [ $? -eq 0 ]; then
   # If it exists, move it to a temporary location
