@@ -27,7 +27,7 @@ jobs:
       mkdir -p ~/.ssh
       echo "$SSH_PRIVATE_KEY_NGINX" > ~/.ssh/id_rsa
       chmod 600 ~/.ssh/id_rsa
-      ssh-keyscan -t rsa BD-Video >> ~/.ssh/known_hosts
+      ssh-keyscan -t rsa pikso.in >> ~/.ssh/known_hosts
      env:
       SSH_PRIVATE_KEY_NGINX: ${{ secrets.SSH_PRIVATE_KEY_NGINX }}
 
