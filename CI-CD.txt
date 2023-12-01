@@ -27,8 +27,19 @@ ssh-add -l
 if not add it
 => ssh-add ~/.ssh/id_rsa
 
+5)  add pub key in authorized_keys
+=> cat id_rsa.pub >> authorized_keys
+=> chmod 700 ~/.ssh/
+=> chmod 600 ~/.ssh/authorized_keys
 
-4) add yml file 
+6)  host key of pikso.in to the known_hosts
+=> ssh-keyscan -t rsa pikso.in >> ~/.ssh/known_hosts
+
+7) test SSH connection 
+=> ssh -T git@github.com
+
+
+8) add yml file 
 => in git repo => actions tab => create yml file 
 
-5) create deploy.sh file on server
+6) create deploy.sh file on server
