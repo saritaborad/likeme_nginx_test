@@ -9,7 +9,7 @@ ssh_key_path="$HOME/.ssh/id_rsa"  # Adjust the path based on your actual key loc
 # Save the 'uploads' folder path
 uploads_folder="$deploy_path/backend/uploads"
 
-# Ensure correct permissions for the SSH key
+# Ensure correct permissions for the SSH keyk
 chmod 600 $ssh_key_path 
 
 # Check if the 'uploads' folder exists on the server
