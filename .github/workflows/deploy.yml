@@ -21,7 +21,6 @@ jobs:
       SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       SSH_PRIVATE_KEY_NGINX: ${{ secrets.SSH_PRIVATE_KEY_NGINX }}
 
-
    - name: Configure SSH key for Nginx
      run: |
       mkdir -p ~/.ssh

@@ -22,7 +22,7 @@ fi
 # Pull the latest changes from the remote repository (assuming the branch is 'master')
 git fetch origin master
 
-# # Copy only the changed files to the server for backend
+#  Copy only the changed files to the server for backend
 rsync -avz -e "ssh -i $ssh_key_path" backend/ root@$deploy_dir/backend
 
 rsync -avz -e "ssh -i $ssh_key_path"  frontend/build/ root@$deploy_dir
