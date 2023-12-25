@@ -82,7 +82,6 @@ export default function RtdDatatableNew(props) {
   // }
 
   const handlePageChange = (pageNumber) => {
-    console.log(pageNumber)
     let tmp_option = option
     tmp_option['page'] = pageNumber['selected'] + 1
     setCurrentPage(pageNumber['selected'] + 1)

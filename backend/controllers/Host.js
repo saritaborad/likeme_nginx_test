@@ -153,7 +153,6 @@ exports.applyForHost = asyncHandler(async (req, res, next) => {
 
    if (file.fieldname == "video") {
     const videoPath = file.path;
-    console.log(file);
     const thumbName = "THUMB_" + file.originalname.split(".")[0] + ".jpg";
     await generateThumb(videoPath, thumbName);
     const it = new Video({ user_id: id, video: file.filename, thumbnail_image: thumbName });

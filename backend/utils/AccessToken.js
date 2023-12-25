@@ -76,7 +76,7 @@ class AccessToken {
   if (typeof str === "string" && str !== "") {
    return true;
   }
-  console.log(`${name} check failed, should be a non-empty string`);
+
   return false;
  }
 
@@ -111,7 +111,6 @@ class AccessToken {
   const appid_len = 32;
   const version = token.substr(0, ver_len);
   if (version !== "006") {
-   console.log("Invalid version " + version);
    return false;
   }
   if (!this.isNonEmptyString("token", token) || !this.isNonEmptyString("appCertificate", appCertificate) || !this.isNonEmptyString("channelName", channelName)) {
@@ -191,4 +190,3 @@ const privilegeExpireTs = Math.floor(Date.now() / 1000) + 3600; // Set expiratio
 
 const token = AccessToken.init(appID, appCertificate, channelName, uid);
 token.addPrivilege(AccessToken.Privileges.kJoinChannel, privilegeExpireTs);
-console.log(token.build());
