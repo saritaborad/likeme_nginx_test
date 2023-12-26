@@ -1,0 +1,388 @@
+
+--------------------------------------------------------
+                        ReactJs
+--------------------------------------------------------
+
+React - open source JavaScript library
+JSX - javascript syntex extention that allows to write html-like code in react
+
+Virtual DOM - it is lightweight copy of actual dom in memory 
+- when changes in state or props - react creates new Virtual Dom - compares it with previous one - updates only necessary part of actual dom
+
+React component - building block of react app - reusable and independed piece of UI which makes combined UI
+- class or function based 
+
+Keys - help react to identify which item have changed, added or deleted in list
+
+React hook - function that allow developer to use state and other feature in function component
+- way to provide stateful logic - managing component state, performing side effect, using life cycle methods 
+
+React Context - way to share data betwn component without passing through every level of component
+- it create context provider to provide data and consumer to consume data.
+
+diff function and class component 
+- function - simple and easy to read - function that accept props as argument and return JSX
+- Class - javascript class that extends React.component class - it has feature like life cycle method and state 
+
+render() - it returns JSX - it is called whenever updates to state or props 
+
+setState() - use to update state of component - when called react re-render component with updated state - any child component also re-render
+
+prop driling - process of passing props from high-level component to a deeply nested component - context and redux 
+
+React Router - way to define different routes and their corresponding component 
+- allow to render different component based on current URL 
+- browserRouter, Route and Link to handle routing 
+
+React Fragment - group multiple element togather without addition DOM element
+
+--------------------------------------------------------
+Hooks in react js 
+--------------------------------------------------------
+useState - manage state in function compo 
+useEffect - perform side effect in function comp (e.g data fetching, subscription, dom manipulation ) after rendering
+useContext - access value of context provider within function comp 
+useReducer - 
+useRef - creates a ref object that can hold value across render
+useMemo - memoize value to prevent un-necessary re-computation
+useCallback - memoize function to prevent un-necessary re-creation
+
+
+useMemo - use to memoize result of function or computation - prevent un-necessary execution of function 
+const result = useMemo(()=>{return a + b},[a, b]) => react will reuse the previous result untill a and b changes
+
+useCallback - to memoize callback fun, preventing un -necessary re-creation of function render 
+- useful when passing callback as dependency to child component
+
+const handleClick = useCallback(()=>{},[])
+
+
+--------------------------------------------------------
+                        NextJs
+--------------------------------------------------------
+SSR and SSG - pre-render pages at build time (ssg) or request time (ssr) 
+
+SSR - process of rendering react component on server and sending generated HTML to client
+    - improve initial page load time 
+    - improve search engine optimization
+    - to implement SSR in nodejs with react, we can use next 
+
+getStaticProps - function to fetch data at build time and pass it as props to page compo - returns props 
+  - used in static site generation(SSG) to pre-render pages with fetched data
+
+=> Example:
+=> The news data is returned as props, which can be accessed in the News component.
+=> During the build process, Next.js will call the getStaticProps function and wait for the asynchronous operation to complete.
+=> The fetched data is stored in the news variable.
+=> The props object is returned with the news data, which will be passed to the News component as props
+=> The revalidate property is set to 1, which means that the page will be re-generated every 1 second (during development) or when a new request is made (in production). This is useful for dynamic data updates
+=> By using getStaticProps, you ensure that the news data is fetched at build time and passed as props to the News component. 
+=> This allows Next.js to generate a static version of the page with the fetched data, providing better performance and SEO benefits
+
+export default function News({ news }) {
+ return (
+  <p>{news}</p>
+ )}
+
+export async function getStaticProps(){
+  let news = {}
+  return {
+    props:{news:news}
+  }
+}
+
+
+getServerSideProps:- 
+--------------------
+=> allows to fetch data on every request made to page
+=> used in SSR to fetch data dynamically at run time
+
+Here's an explanation of how the getServerSideProps method works:
+
+=> When a request is made to a page that includes the getServerSideProps method, Next.js calls this function on the server.
+=> Inside the getServerSideProps function, you can fetch data from an API, a database, or any other data source using asynchronous operations like fetch.
+=> The fetched data is typically stored in variables in data variable.
+=> You return an object in props key. This data will be passed as props to the page component.
+=> The page component, along with the fetched data as props, is then rendered on the server and sent as a response to the client.
+=> The getServerSideProps method is useful when you have dynamic data that needs to be fetched and rendered on each request, such as personalized user data, real-time data, or data that frequently changes. It enables server-side rendering for the specific page, allowing you to fetch and render data dynamically on the server.
+
+
+export default function MyPage({ data }) {
+  // Use the fetched data in your page component
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>{data.description}</p>
+    </div>
+  );
+}
+
+export async function getServerSideProps() {
+  // Fetch data from an API or database
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+
+  // Return the data as props
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+getStaticPaths function 
+- use for dynamic route generation in nextjs 
+
+--------------------------------------
+Diff getServerSideProps and useEffect
+--------------------------------------
+
+- both used in next.js for data fetching and handling side effect
+
+getServerSideProps: - 
+- executed on server-side during every request 
+- fetch data before rendering and provide props to page 
+
+useEffect:- 
+- executed on client side after component has render 
+- it run after inital render
+
+--------------------------------------------------------
+                      NodeJS 
+--------------------------------------------------------
+- single threaded
+- event loop and non-blocking i/o to handle multiple request 
+
+event loop 
+- it checks for new event in queue and execute one by one in loop to handle multiple req 
+
+non-blocking 
+-  nodejs initate operation and continue execute without waiting for other i/o when i/o operation finish callback returns result 
+
+
+--------------------------------------------------------
+Diff single thread multi thread
+--------------------------------------------------------
+- referes to handling consurrent task and executing task 
+
+single thread 
+- only one thread of execution 
+- program sequentially executes in single flow 
+- task or operation is processed in sequential manner 
+- program can work on single taks at a time 
+- if task takes long time, it can block sub sequent task 
+- leading delay in overall execution 
+
+multi thread
+- multiple thread of execution
+- each thread represent separate flow in program
+- multiple task performed simultaneously using multiple thread
+- each thread can perform specific task 
+- allowing parallel execution of task
+- threads can communicate with each other and share data
+
+os module - provides info related to operating sys
+querystring - provide method to parse and format url query string 
+
+crypto - provide crypto graphic functionality 
+- generating hash, encrypting, decrypting data, working with signature
+
+--------------------------------------------------------
+path module
+--------------------------------------------------------
+- to join path segments 
+- to resolve relative paths
+- to extract file extentions 
+
+path.resolve() - returns absolute path of project - C:\Users\junior node\Desktop\pramay
+path.resolve("public","image","logo.png") - returns absolute path of file or directory - C:\Users\junior node\Desktop\pramay\public\images\logo.png
+path.resolve(__dirname) - returns abs path of current dir 
+path.resolve(__filename) - returns abs path of current file 
+path.join("/usr", "local", "bin", "app.js") - \usr\local\bin\app.js
+path.dirname("C:\\Users\\junior node\\Desktop\\pramay\\public\\images\\logo.png) -  C:\Users\junior node\Desktop\pramay\public\images
+path.extname("C:\\Users\\junior node\\Desktop\\pramay\\public\\images\\logo.png") - .png
+path.normalize("C:\\Users\\junior node\\Desktop\\pramay\\..\\images\\logo.png") - C:\Users\junior node\Desktop\images\logo.png - it resolves . and .. 
+path.isAbsolute("file.txt") - false - returns boolean for abs path
+path.relative("C:\\Users\\junior node\\Desktop\\pramay\\images\\logo.png", "C:\\Users\\junior node\\Desktop") -  ..\..\.. - returns relative path to given arg 
+path.sep => returns / for win and \ for linux
+
+--------------------------------------------------------
+socket 
+--------------------------------------------------------
+
+web sockets - communication protocol, enables real time, bi-directional data transfer bet client and server
+socket.emit(eventName, data) => send event to specific connected client/socket - one-to-one communication 
+io.emit - send event to all connected client/sockets - one-to-many 
+socket.join(room)
+socket.leave(room)
+=> socket.emit() => to emit data to only current connected socket 
+=> io.emit() => to emit data to all connected socket 
+=> socket.broadcast.emit() => to emit data to all other socket except current connected 
+=> io.to(room).emit(eventName,data) => to emit data to only given room 
+
+--------------------------------------------------------
+fs module 
+--------------------------------------------------------
+
+fs - to create, delete and modify files, as well as to read content async or sync way 
+
+
+form submission - it can be handle by middleware like body-parser to parse multipart/formdata
+
+env - it is use to store configuration setting for nodejs 
+    - to access env use process.env object
+
+--------------------------------------------------------
+Http 
+--------------------------------------------------------
+- to create http and https server 
+- making http request 
+
+--------------------------------------------------------
+Stream in nodejs 
+--------------------------------------------------------
+- to handle data streaming 
+- enable large amount of data processing by working with chunk instead of entire data
+
+--------------------------------------------------------
+hook
+--------------------------------------------------------
+
+hook - mechanisam to modify operation or event in app
+     - to register or execute custom code when certain event occurs
+     - middleware act as hook  - it modify req and res 
+
+app.use((req,res,next)=>{
+ next() - pass control to next middleware
+})
+
+- pre and post hook in mongoose - mongoose provides hook to modify document before and after they are executed 
+    userSchema.pre('save', function(next) {
+      console.log('Saving user:', this.name);
+      next();
+    });
+
+- webhook 
+- user defined http callback
+- allow external service to be notified when certain event occur in app 
+- hooks to execute custom code when receving notification
+- triggered by new register, payment confirmation ,data updates 
+
+- GitHub Webhooks
+- Payment Gateway Webhooks 
+
+--------------------------------------------------------
+Event in nodejs
+--------------------------------------------------------
+
+Event hook - 
+- you can define and emit custom events using EventEmitter
+- other part of app can listen to this event and execute specific action when they are trigger
+
+  const EventEmitter = require('events');
+  class MyEmitter extends EventEmitter {}
+  const myEmitter = new MyEmitter();
+
+  // Define a hook (custom event)
+  myEmitter.on('customEvent', (data) => {
+    console.log('Custom event triggered:', data);
+  });
+
+  // Trigger the hook (emit the custom event)
+  myEmitter.emit('customEvent', { message: 'Hello, World!' });
+
+
+--------------------------------------------------------
+                      MongoDb 
+--------------------------------------------------------
+- noSql database
+- document oriented database
+- it stores data in JSON format
+- schemaless, no need to define schema
+
+
+--------------------------------------------------------
+lean()
+--------------------------------------------------------
+Message.find({ type: 1 }).select("title -_id").lean()
+- to retrieve plain JavaScript objects rather than Mongoose documents, 
+Reduced Overhead:- Mongoose documents come with additional metadata and methods
+Memory Efficiency:  - Mongoose documents can consume more memory
+Faster Serialization: -  plain JavaScript objects are usually faster to serialize into JSON,
+
+Note:- lose some of the Mongoose-specific features and methods that documents provide
+
+
+
+--------------------------------------------------------
+        --------------- Linux ---------------
+--------------------------------------------------------
+
+--------------------------------------------------------
+zip
+--------------------------------------------------------
+
+--> To zip any folder in ubuntu 
+zip -r my_project.zip . --exclude=node_modules/ --exclude=dist/ --exclude=other_folder/
+
+==> zip first 1000 files 
+---> zip -r 1000.zip $(ls | head -n 1000)
+
+=> zip from 100 to next limit
+---> zip -r next_100_files.zip $(ls | tail -n +101 | head -n 100)
+
+
+
+--------------------------------------------------------
+cron job in apache linux
+--------------------------------------------------------
+
+--> To list cron jobs running 
+crontab -l
+
+--> to open cron file in edit mode 
+crontab -e
+
+--> exit from crontab edit file
+ctrl + z 
+
+--> open crontab with editor
+EDITOR=nano crontab -e 
+
+--------------------------------------------------------
+server time setting 
+--------------------------------------------------------
+==> check server timezone 
+---> timedatectl
+
+==> set timezone on server
+---> sudo timedatectl set-timezone Asia/Singapore
+
+-----------------------------------------------------------
+
+logical Questions
+
+-----------------------------------------------------------
+1) in - {a:1, b:2, c:3} out -{ a: 3, b: 6, c: 9 }
+let input = {a:1, b:2, c:3}
+Object.entries(input) => [[a,1],[b,2]]
+Object.fromEntries(Object.entries(input)) => {a:1, b:2, c:3}
+Object.fromEntries(Object.entries(input).map(([key, value]) => [key, value * 3])); // returns { a: 3, b: 6, c: 9 }
+--------------------------------------------------------
+
+2) return even num from arr 
+let arr = [1,2,3,4,5]
+arr.filter((item)=>item % 2 ===2)
+--------------------------------------------------------
+
+3) get unique array from two array
+let arr1 = [1, 2, 3, 4, 5, 6, 7];
+let arr2 = [2, 4, 7, 4];
+
+let combinedSet = new Set([...arr1, ...arr2]);
+console.log(Array.from(combinedSet));
+
+let uniqueArray = arr1.concat(arr2).filter((value, index, self) => {    return self.indexOf(value) === index});
+
+indexOf() - it will return index and check if element is first occurance in array
+--------------------------------------------------------

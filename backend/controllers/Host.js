@@ -11,6 +11,7 @@ const { ObjectId } = require("mongodb");
 const fs = require("fs");
 const path = require("path");
 const { generateThumb, deleteFile } = require("../utils/commonFunc");
+const { METHODS } = require("http");
 
 exports.blockUnblockHost = asyncHandler(async (req, res) => {
  const { user_id, is_block } = req.body;

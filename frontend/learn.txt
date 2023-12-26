@@ -1,3 +1,410 @@
+
+
+  => NodeJs use single thread to handle all incoming requests 
+  => JavaScript execution in NodeJs is single threaded
+  => NodeJs employs concept of event loop and non blocking i/o to handle multiple request 
+  
+  => event loop=> NodeJs use event driven architecture with event loop 
+      => the event loop checks for new events in queue and execute them one by one in loop. 
+      => this allow nodejs to handle multiple request
+  
+  => Non-Blocking I/O => NodeJs relies on non-blocking i/o 
+      => when request i/o operation such as reading from file or making request
+      => nodejs initiate the operation and continue execute without waiting for other i/o
+      => when i/o operation finish callback function triggerd to handle result.
+      => this allow nodejs blocking execution while waiting for i/o operation 
+
+=> single-thread and multi-thread 
+=> refers to handling concurrent tasks and executing code 
+=> single threaded 
+   => only one thread of execution
+   => program sequentially executes instructions one after the other in a single flow
+   => task or operation is processed in a sequential manner
+   => the program can only work on one task at a time
+   => If a task takes a long time to complete, it can block the execution of subsequent tasks
+   => leading to a delay in the overall execution of the program
+
+=> Multi-threaded: 
+   => there are multiple threads of execution. 
+   => Each thread represents a separate flow of control within the program.
+   => The program can perform multiple tasks simultaneously by executing different threads concurrently. 
+   => Each thread can work on a specific task independently, 
+   => allowing for parallel execution of tasks. 
+   => Threads can communicate with each other and share data, 
+   => enabling coordination and synchronization between different parts of the program.
+
+      
+  ===========================
+  fs:
+  => it provides methods for working with file system
+  => reading, writing files, creating directories, managing file
+
+  http and https:
+  => it enables creating http and https server and making http request
+  =>  http: for creating HTTP servers and clients.
+
+  path:
+  => it provides utility to work with directories and file paths 
+  => it helps to extract file extension
+  => resolving relative paths 
+  => joining path segement 
+
+  os:
+  => provides info related to operating system
+
+  stream: 
+  => to handle data streaming
+  => enables large amount of data processing by working with chunk instead of entire data 
+
+  querystring:
+  => provides method of parsing and formatting URL query string 
+
+  crypto: 
+  => provides cryptographic functionality 
+  => generating hash, encrypting and decrypting data and working with signature
+
+=> mongodb is NoSQL database, 
+=> it is document-oriented database 
+=> sql database organize data into tables 
+=> mongodb stores data in JSON format 
+=> mongodb is schemaless, no need to define schema
+
+1. what is nodejs? 
+=> open source, server-side javascript runtime environment,
+    => allows to run javascript code outside browser
+=> it uses v8 javascript engine from google crome to execute code
+=> provides built in modules for various tasks
+    => fs operations 
+    => networking
+    => HTTP handling 
+=> build scalable and efficient server-side apps 
+
+2. how does nodejs work? explain event driven, non blocking i/o model. 
+=> it uses an event loop 
+  => to handle asynchronous operations
+  => without blocking the execution of other tasks.
+=> Node.js performs I/O operations, 
+    => it doesn't wait for the results but continues executing other code.  
+=> Once the I/O operation is completed, the corresponding callback is executed, and the result is processed
+
+3. what is difference between synchronous and asynchronous programming
+=> synchronous 
+  => code execution occurs sequentially
+  => each operation blocks the execution until it completes
+=> asynchronous programming
+  => allows multiple operations to be executed concurrently
+  => the program continues to run without waiting for the results of those operations  
+  => it is non-blocking and use callbacks or Promises to handle results
+
+4. how can you handle errors in nodejs?
+=> using try-catch blocks 
+=> by passing an error-first callback to handle errors in asynchronous operations
+=> middleware in Express.js can be used to handle errors globally
+
+5. Explain the role of the Node.js event loop in handling requests.
+=> When a request is received, 
+    => Node.js initiates the event loop to process the request asynchronously.
+    => event loop processes events from the event queue one by one
+    => it allows Node.js to handle multiple requests concurrently
+
+6. What are callbacks in Node.js? How can you avoid callback hell?
+=> Callbacks are functions passed as arguments to another function    
+=> used to handle asynchronous operations in Node.js
+=> Callback hell 
+    => refers to the situation where multiple nested callbacks make the code hard to read and maintain
+    => To avoid callback hell,
+    developers can use techniques like modularization, Promises, or async/await to write more structured and readable asynchronous code
+
+7. What are Promises in Node.js? How do they help in handling asynchronous operations?
+=> Promises are objects that represent the eventual completion (or failure) of an asynchronous operation
+=> provide a more structured way to handle asynchronous code
+=> it allow chaining of multiple asynchronous operations
+=> help in avoiding callback hell and enable better error handling through the use of catch blocks
+
+8. How can you use the async/await feature in Node.js to handle asynchronous operations?
+=> allows developers to write asynchronous code in a synchronous-like manner
+=> developers can write asynchronous code that looks similar to synchronous code, making it more readable and maintainable.
+
+9. What is middleware in the context of Node.js and Express.js? How is it used?
+=> functions that have access to the request and response objects
+=> can modify or terminate the request-response cycle
+=> to perform tasks like logging, authentication, error handling etc 
+=> each middleware are executed sequentially, 
+   and can pass the request to the next middleware in the chain using the next() function.
+
+10. What is package.json in Node.js, and what information does it contain?
+=> package.json is a file used to manage metadata and dependencies of a Node.js project.
+=> It contains information about the project, 
+  => such as the name, version, description, entry point, dependencies, and scripts to run various tasks
+
+11. How do you manage dependencies in Node.js projects?
+=> dependencies are managed using package managers like NPM (Node Package Manager) or Yarn
+=> Developers specify the required dependencies in the package.json file, 
+=> the package manager installs them automatically when the project is set up or when additional dependencies are added
+
+12. Explain the concept of streams in Node.js. What are the different types of streams?
+=> streams are objects that allow developers to read or write data in chunks instead of reading or writing the entire data at once
+=> Types:-
+  Readable, Writable, Duplex, and Transform
+=> useful for processing large amounts of data efficiently and handling data in a memory-friendly manner
+
+13. How can you handle file uploads in Node.js?
+=> using the multer middleware in Express.js.
+=> Multer allows easy handling of multipart/form-data
+=> provides methods to access the uploaded files and their metadata
+
+14. What is NPM (Node Package Manager), and how is it used in Node.js projects?
+=> it allows developers to install, manage, and share packages and modules written in JavaScript
+=> used to install dependencies specified in the package.json file
+=> provides commands to run scripts, manage versions, and publish packages
+
+15. How do you deploy a Node.js application to a server?
+=> by copying the application files, 
+=> installing dependencies using NPM, 
+=> running the application using Node.js
+
+16. How can you debug Node.js applications?
+=> can be debugged using the built-in Node.js debugger, which allows setting breakpoints, inspecting variables, and stepping through code
+
+17. What is clustering in Node.js, and how does it improve application performance?
+=> It allows creating multiple instances (or workers) of the application
+   => to handle incoming requests concurrently
+=> Each worker runs in a separate process and can utilize multiple CPU cores
+     which improves application performance and scalability by distributing the workload
+
+18. How do you handle authentication and authorization in a Node.js application?
+=> using middleware
+
+19. What are the common security concerns in Node.js applications, and how can you address them?
+=> injection attacks
+  => in this attacker injetcs malicious data or code into application to manipulate beh of app or gain auauthorise access
+  => this type of attack mainly occur if application doesn't properly validate or sanitize user inputs
+
+    => SQL injection => manipulate input data to inject malicious SQL code into database queries
+    => SELECT * FROM users WHERE username = 'input' OR '1'='1';
+
+=> cross-site scripting (XSS), 
+  
+  <script>alert('XSS Attack!');</script>
+
+  => its type of security vulnerability that occurs when attacker injects malicious script into web page that are viewed by users 
+  => it can allow attacker to steal user info, and do other malicious activity 
+
+     stored XSS(Persistant XSS):- 
+     => in this type of attack script is permanantly stored in targeted server
+    
+     Reflected XSS(Non-Persistant XSS):-
+     => in this type of Xss attack malicious script is injected in url or form input 
+
+     DOM based XSS 
+     => this type of attack occurs when the web page's DOM is manipulated by script to cause issue.
+
+=> cross-site request forgery (CSRF), 
+=> insecure dependencies
+
+
+20. How can you improve the performance of a Node.js application?
+=> developers can optimize database queries
+=> cache frequently accessed data
+=> use clustering to utilize multiple CPU cores
+=> employ a content delivery network (CDN) for serving static assets
+=> using asynchronous I/O and avoiding synchronous operations
+
+21. Injection attacks
+=> attacker is able to inject malicious code into an application's input fields or parameters.
+=> injected code is then executed by the application, 
+  leading to unauthorized access,
+  data manipulation, 
+  even complete control of the application or the underlying system.
+=> SQL Injection
+  => attackers insert malicious SQL code into input fields or parameters that interact with a database
+=> Cross-Site Scripting (XSS):
+  => attacker injects malicious scripts into web pages that are viewed by other users
+=> Command Injection:
+  =>  injects malicious commands into an application's command-line input
+=> LDAP Injection:
+  => occur in app uses Lightweight Directory Access Protocol (LDAP) for authentication
+  => Attackers manipulate LDAP queries to bypass authentication or gain unauthorized access to the directory.
+=> XPath Injection:
+  => use XPath to query XML data. 
+  => Attackers inject malicious code into XPath queries to manipulate or access sensitive information.
+
+
+22. What is CORS?
+=> Cross-Origin Resource Sharing
+=> security feature implemented by web browsers
+    =>  allows web servers to specify which origins (domains) are allowed to access their resources
+=> CORS allows web servers to specify which origins are allowed to access their resources
+=> This is done through HTTP headers sent by the server in response to a client's request. 
+  => Access-Control-Allow-Origin 
+    =>  specifies which origin(s) are allowed to make requests to the server
+    => "*" means any origin is allowed
+
+  => Access-Control-Allow-Methods
+    => This header indicates the HTTP methods (e.g., GET, POST, PUT, DELETE) that are allowed when making cross-origin requests.
+
+  => Access-Control-Allow-Headers
+    => This header lists the HTTP headers that the client can include in the request when making a cross-origin request.
+
+  => Access-Control-Allow-Credentials
+    =>  If the server allows credentials (e.g., cookies, HTTP authentication) to be sent with the request, this header should be set to "true
+
+  => Access-Control-Expose-Headers 
+    => This header specifies which response headers should be exposed and made accessible to the client.
+
+  => Access-Control-Max-Age
+    => This header indicates how long the results of a preflight request (an OPTIONS request sent by the browser before making the actual request) can be cached.
+
+23. What is the purpose of the "fs" module in Node.js?
+=> can create, delete, or modify files, as well as read their contents asynchronously or synchronously
+
+24. How can you handle form submissions in a Node.js application?
+=> can handle form submissions using middleware 
+    => like "body-parser" to parse the form data from the request body
+
+25. What are WebSockets, and how can you use them in a Node.js application?
+=>  WebSockets are a communication protocol 
+  => that enables real-time, bidirectional data transfer between a client and a server 
+
+26. What is server-side rendering (SSR) in React, and how can you implement it in a Node.js application?
+=> Server-side rendering (SSR) is the process of rendering React components on the server and sending the generated HTML to the client
+=> it improves the initial page load time and search engine optimization
+=> To implement SSR in a Node.js application with React, you can use frameworks like Next.js
+
+27. How can you use environment variables in a Node.js application?
+=> Environment variables are used to store configuration settings for a Node.js
+=>  access environment variables using the "process.env" object
+
+path.resolve("public", "images", "logo.png")
+=> output:-  C:\Users\junior node\Desktop\pramay\public\images\logo.png
+=>  return absolve path of file or directory
+
+path.resolve()
+=> C:\Users\junior node\Desktop\pramay
+=> returns absolute path of project 
+
+path.resolve(__dirname)
+=> returns absolute path of current directory
+
+path.resolve(__filename)
+=> returns absolute path of current file
+
+path.join("/usr", "local", "bin", "app.js")
+=> \usr\local\bin\app.js
+
+path.dirname("C:\\Users\\junior node\\Desktop\\pramay\\public\\images\\logo.png")
+=> C:\Users\junior node\Desktop\pramay\public\images
+
+path.extname("C:\\Users\\junior node\\Desktop\\pramay\\public\\images\\logo.png")
+=> .png 
+
+path.normalize("C:\\Users\\junior node\\Desktop\\pramay\\..\\images\\logo.png")
+C:\Users\junior node\Desktop\images\logo.png
+=> it normalize path resolves . and ..
+
+path.isAbsolute('/path/to/file.txt') // true 
+path.isAbsolute('file.txt')       // false
+
+path.relative("C:\\Users\\junior node\\Desktop\\pramay\\images\\logo.png", "C:\\Users\\junior node\\Desktop")
+Output:- ..\..\..
+
+path.parse("C:\\Users\\junior node\\Desktop\\pramay\\images\\logo.png")
+Output:- 
+{
+  root: 'C:\\',
+  dir: 'C:\\Users\\junior node\\Desktop\\pramay\\images',
+  base: 'logo.png',
+  ext: '.png',
+  name: 'logo'
+}
+
+path.sep => returns / for window \ for linux
+
+
+
+
+// Example to enable and disble in one query
+
+1) constant.MongoDb.version
+  .updateMany({}, [{ $set: { enabled: { $cond: { if: { $eq: ["$_id", new ObjectId(code)] }, then: 1, else: 0 } } } }])
+  .then((result) => {   response.end(ConstantMethod.success(result));  })
+  .catch((error) => {    console.error("Error updating records:", error);  });
+
+2) YourModel.bulkWrite([{ updateMany: { filter: {}, update: { $set: { status: 0 } } } }, { updateOne: { filter: { _id: idToUpdate }, update: { $set: { status: 1 } } } }]);
+  
+
+Hook in nodejs
+=>  it is a mechanism to modify operations or events in application
+=>  mechanisms to register and execute custom code
+ when certain events occur or specific operations are performed
+
+=> Middleware Hooks in Express.js
+=> Event Hooks using EventEmitter:
+=> Pre and Post Hooks in Mongoose:
+=> Hooks in Webhooks:
+
+
+=> Middleware Hooks in Express.js
+   => middleware functions act as hooks => intercept and modify incoming HTTP req and outgoing res
+   => Middleware functions are executed in the order they are registered
+   => authentication, logging, error handling, and request preprocessing before passing control to the next middleware or route handler.
+
+  app.use((req, res, next) => {
+    console.log('Incoming request:', req.method, req.url);
+    next(); // Pass control to the next middleware or route handler
+  });
+
+=> Event Hooks using EventEmitter:
+   => In Node.js modules, you can define and emit custom events using EventEmitter
+   => Other parts of your application can listen for these events and execute specific actions when they are triggered
+
+  const EventEmitter = require('events');
+  class MyEmitter extends EventEmitter {}
+  const myEmitter = new MyEmitter();
+
+  // Define a hook (custom event)
+  myEmitter.on('customEvent', (data) => {
+    console.log('Custom event triggered:', data);
+  });
+
+  // Trigger the hook (emit the custom event)
+  myEmitter.emit('customEvent', { message: 'Hello, World!' });
+
+=> Pre and Post Hooks in Mongoose:
+   => Mongoose provides hooks that allow you to intercept and modify document operations before or after they are executed in the database.
+
+   // Pre-save hook: Execute before saving the document
+    userSchema.pre('save', function(next) {
+      console.log('Saving user:', this.name);
+      next();
+    }); 
+
+=> Hooks in Webhooks:
+  => Webhooks are user-defined HTTP callbacks 
+     => allow external services to be notified when certain events occur in an application
+     => These events could be triggered by actions like data updates, new user registrations, or payment confirmations
+     => Webhooks act as hooks to execute custom code on receiving the event notification
+
+     // Webhook endpoint for receiving event notifications
+    app.post('/webhook', (req, res) => {
+      const eventData = req.body; // Data sent by the external service
+      console.log('Received webhook event:', eventData);
+      // Process the event and execute custom actions
+      res.sendStatus(200); // Respond with a success status to the external service
+    });
+
+=> GitHub Webhooks => code push, pull request, or issue creation
+=> Payment Gateway Webhooks 
+  => notify merchants about payment events, such as successful payments, failed transactions, or chargebacks
+  => Merchants can use these webhooks to update the payment status in their systems or send order confirmation emails
+=> Chat Application Webhooks 
+  =>  to integrate third-party applications and systems with chat platforms.
+=> Web Forms Webhooks:  
+=> Weather API Webhooks: push real-time weather updates to subscribers, such as weather applications or websites,
+=> Webhooks for Event Notifications: 
+=> Social Media Webhooks: 
+
+
 --------------------- frontend -------------------
 let config = {
   headers: {

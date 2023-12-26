@@ -43,3 +43,5 @@ if not add it
 => in git repo => actions tab => create yml file 
 
 9) create deploy.sh file on server
+
+
