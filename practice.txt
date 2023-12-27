@@ -300,6 +300,76 @@ Event hook -
 - it stores data in JSON format
 - schemaless, no need to define schema
 
+advantage
+- easy to scale up or down
+- supports data partitioning
+- use dynamic db schema 
+- use javascript obj 
+- supports primary and secondary index 
+- supports field, range-based, string pattern matching type queries
+
+features of mongodb 
+- indexing - it supports unique,compound,full-text index 
+- Aggregation -provides aggregation framework for data processing
+- TTl - it supports ttl for data that should expire at certain time
+- Sharding - process of splitting data across machines 
+
+BSON - binary JSON - binary encoded json like docs 
+document - JSON like data structure
+Collection - group of MongoDb documents
+databases - group of collections
+mongo shell - javascript shell that allows mongodb from command line 
+ObjectId - 12 byte unique id - primary key - generated based on timestamp, machine id, process id, random string 
+
+findOne - returns first doc match
+find - returns all doc 
+
+index - it is data structure - improves speed of data retrival 
+aggregation - a feature of mongo - provides data transformation and process using pipeline
+- allows filter, project, group and ops
+
+sharding - process of distributing data across multiple machine 
+- use for horizontal scaling and improve performance
+
+Replica set - Replica set is group of mongodb servers that maintan same data set 
+- it provides high availabilty
+- it has primary node and one or more secondary node 
+
+Primary node - it accept write operation
+
+performance improve 
+- creating index 
+- proper schema design 
+- lean method 
+
+$lookup
+- performs left out join net current collection and another collection 
+{
+  $lookup: {
+    from: "foreignCollection",
+    localField: "localField",
+    foreignField: "foreignField",
+    as: "outputArray"
+  }
+}
+
+mongodump - to create binary export of content of database
+mongorestore - restore content of db from binary export created by mongodump
+
+$text - to enable text search 
+
+diff sharding and replication 
+- sharding - distributing data across multiple machine - improve horizontal scaling 
+- replication - creating copy across multiple server - to enhance high availability 
+
+mongostate -  provides a real-time, human-readable view  statistics
+
+
+
+
+
+
+
 
 --------------------------------------------------------
 lean()
@@ -311,6 +381,8 @@ Memory Efficiency:  - Mongoose documents can consume more memory
 Faster Serialization: -  plain JavaScript objects are usually faster to serialize into JSON,
 
 Note:- lose some of the Mongoose-specific features and methods that documents provide
+
+
 
 
 
@@ -874,7 +946,7 @@ indexOf() - it will return index and check if element is first occurance in arra
    ***
     *
 
-     *
+    *
    * *
   *   *
  *     *
