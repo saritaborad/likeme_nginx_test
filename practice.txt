@@ -358,11 +358,431 @@ server time setting
 ==> set timezone on server
 ---> sudo timedatectl set-timezone Asia/Singapore
 
+--------------------------------------------------------
+                        GraphQL
+--------------------------------------------------------
+
+
+const GET_ALL_SLUGS = gql`
+ query {
+  posts {
+   data {
+    attributes {
+     slug
+    }
+   }
+  }
+ }
+`;
+
+const GET_ALL_AUTHORS = gql`
+ query {
+  authors {
+   data {
+    id
+    attributes {
+     name
+     description
+     about
+     createdAt
+     social
+     image {
+      data {
+       attributes {
+        url
+        name
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_SINGLE_AUTHOR = gql`
+ query ($id: ID!) {
+  author(id: $id) {
+   data {
+    id
+    attributes {
+     name
+     description
+     social
+     createdAt
+     about
+     image {
+      data {
+       attributes {
+        url
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_AUTHORBY_NAME = gql`
+ query ($name1: String!) {
+  authors(filters: { name: { eq: $name1 } }) {
+   data {
+    id
+    attributes {
+     name
+     description
+     social
+     createdAt
+     about
+     image {
+      data {
+       attributes {
+        url
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_TAG = gql`
+ query ($id: ID!) {
+  tag(id: $id) {
+   data {
+    id
+    attributes {
+     name
+    }
+   }
+  }
+ }
+`;
+
+const GET_ALL_TAG = gql`
+ query {
+  tags {
+   data {
+    id
+    attributes {
+     name
+    }
+   }
+  }
+ }
+`;
+
+const GET_ALL_POST = gql`
+ query {
+  posts {
+   data {
+    id
+    attributes {
+     title
+     description
+     createdAt
+     content
+     slug
+     status
+     image {
+      data {
+       attributes {
+        url
+       }
+      }
+     }
+     author {
+      data {
+       id
+       attributes {
+        name
+        description
+        social
+        about
+        image {
+         data {
+          attributes {
+           url
+          }
+         }
+        }
+       }
+      }
+     }
+     categories {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+     tags {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_SINGLE_POST = gql`
+ query ($id: ID!) {
+  post(id: $id) {
+   data {
+    id
+    attributes {
+     title
+     description
+     categories {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+     author {
+      data {
+       id
+       attributes {
+        name
+        about
+        image {
+         data {
+          id
+          attributes {
+           url
+           name
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_POSTBY_SLUG = gql`
+ query ($urlSlug: String!) {
+  posts(filters: { slug: { eq: $urlSlug } }) {
+   data {
+    id
+    attributes {
+     title
+     description
+     createdAt
+     content
+     slug
+     image {
+      data {
+       attributes {
+        url
+       }
+      }
+     }
+     categories {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+     author {
+      data {
+       id
+       attributes {
+        name
+        about
+        image {
+         data {
+          id
+          attributes {
+           url
+           name
+          }
+         }
+        }
+       }
+      }
+     }
+     tags {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_POSTBY_CATEGORY = gql`
+ query ($category: String!) {
+  posts(filters: { categories: { name: { eq: $category } } }) {
+   data {
+    id
+    attributes {
+     title
+     description
+     createdAt
+     content
+     slug
+     image {
+      data {
+       attributes {
+        url
+       }
+      }
+     }
+     categories {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+     author {
+      data {
+       id
+       attributes {
+        name
+        about
+        image {
+         data {
+          id
+          attributes {
+           url
+           name
+          }
+         }
+        }
+       }
+      }
+     }
+     tags {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_POSTBY_TAG = gql`
+ query ($tag: String!) {
+  posts(filters: { tags: { name: { eq: $tag } } }) {
+   data {
+    id
+    attributes {
+     title
+     description
+     createdAt
+     content
+     slug
+     image {
+      data {
+       attributes {
+        url
+       }
+      }
+     }
+     categories {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+     author {
+      data {
+       id
+       attributes {
+        name
+        about
+        image {
+         data {
+          id
+          attributes {
+           url
+           name
+          }
+         }
+        }
+       }
+      }
+     }
+     tags {
+      data {
+       id
+       attributes {
+        name
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+`;
+
+const GET_ALL_CATEGORY = gql`
+ query {
+  categories {
+   data {
+    id
+    attributes {
+     name
+    }
+   }
+  }
+ }
+`;
+
+const GET_CATEGORY = gql`
+ query ($id: ID) {
+  category(id: $id) {
+   data {
+    id
+    attributes {
+     name
+     createdAt
+    }
+   }
+  }
+ }
+`;
+
+
+
+
 -----------------------------------------------------------
 
-logical Questions
+                      logical Questions
 
 -----------------------------------------------------------
+
 1) in - {a:1, b:2, c:3} out -{ a: 3, b: 6, c: 9 }
 let input = {a:1, b:2, c:3}
 Object.entries(input) => [[a,1],[b,2]]
@@ -386,3 +806,475 @@ let uniqueArray = arr1.concat(arr2).filter((value, index, self) => {    return s
 
 indexOf() - it will return index and check if element is first occurance in array
 --------------------------------------------------------
+
+
+4)
+*****
+*****
+*****
+*****
+*****
+
+*****
+*   *
+*   *
+*   *
+*****
+
+    *
+   **
+  ***
+ ****
+*****
+
+*
+**
+***
+****
+*****
+
+*****
+****
+***
+**
+*
+
+*
+**
+* *
+*  *
+*   *
+******
+
+    *
+   ***
+  *****
+ *******
+*********
+
+*********
+ *******
+  *****
+   ***
+    *
+
+    *
+   * *
+  *   *
+ *     *
+*********
+
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+     *
+   * *
+  *   *
+ *     *
+*       *
+ *     *
+  *   *
+   * *
+    *
+
+*********
+ *******
+  *****
+   ***
+    *
+   ***
+  *****
+ *******
+*********
+
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+
+    *
+   **
+  ***
+ ****
+*****
+ ****
+  ***
+   **
+    *
+
+ ***   ***
+***** *****
+***********
+ *********
+  *******
+   *****
+    ***
+     *
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+    We can see that we need to run a loop for a row number of times. We need to run a loop for 5 rows in the example here. This forms the external loop.
+We need to run a loop to print n numbers in each row, where n is the row number. This forms the internal loop.
+In the example above, we have 5 rows. For 5 rows, we need an external loop that goes from n = 1 to n = 5 (i.e. no of rows).
+For each row, we need to print numbers from num = 1 to num = n.
+Example : For the 5th row, n = 5. The internal loop goes from num = 1 to num = 5. The 5th row becomes: 1 2 3 4 5
+
+let str = "";
+for (i = 1; i <= 5; i++) {
+ for (j = 1; j <= i; j++) {
+  str += j + " ";
+ }
+ str += "\n";
+}
+console.log(str);
+
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+
+let str = "";
+for (i = 1; i <= 5; i++) {
+ for (j = 1; j <= i; j++) {
+  str += i + " ";
+ }
+ str += "\n";
+}
+console.log(str);
+
+1
+2 3
+4 5 6
+7 8 9 10
+
+let str = "";
+let sum = 1;
+for (i = 1; i <= 4; i++) {
+ for (j = 1; j <= i; j++) {
+  str += sum + " ";
+  sum++;
+ }
+
+ str += "\n";
+}
+console.log(str);
+
+12345
+1234
+123
+12
+1
+
+let str = "";
+let n = 5;
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= n + 1 - i; j++) {
+  str += j;
+ }
+ str += "\n";
+}
+console.log(str);
+
+    1
+   123
+  12345
+ 1234567
+123456789
+
+let n = 5;
+let str = "";
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= n - i; n++) {
+  str += " ";
+ }
+ for (k = 1; k <= 2 * n - 1; k++) {
+  str += k;
+ }
+ str += "\n";
+}
+console.log(str);
+
+
+*****
+*****
+*****
+*****
+*****
+
+let str = "";
+for (i = 1; i <= 5; i++) {
+ for (j = 1; j <= 5; j++) {
+  str += "*";
+ }
+ str += "\n";
+}
+console.log(str);
+
+*****
+*   *
+*   *
+*   *
+*****
+
+let str = "";
+for (i = 1; i <= 5; i++) {
+ for (j = 1; j <= 5; j++) {
+  if (i == 1 || i == 5) {
+   str += "*";
+  } else {
+   if (j == 1 || j == 5) {
+    str += "*";
+   } else {
+    str += " ";
+   }
+  }
+ }
+ str += "\n";
+}
+console.log(str);
+
+    *
+   **
+  ***
+ ****
+*****
+
+let str = "";
+let n = 5;
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= n - i; j++) {
+  str += " ";
+ }
+ for (k = 1; k <= i; k++) {
+  str += "*";
+ }
+ str += "\n";
+}
+console.log(str);
+
+*
+**
+***
+****
+*****
+let n = 5;
+let str = "";
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= i; j++) {
+  str += "*";
+ }
+ str += "\n";
+}
+console.log(str);
+
+    *
+   ***
+  *****
+ *******
+*********
+let n = 5;
+let str = "";
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= n - i; j++) {
+  str += " ";
+ }
+ for (k = 1; k <= 2 * i - 1; k++) {
+  str += "*";
+ }
+ str += "\n";
+}
+console.log(str);
+
+54321
+5432
+543
+54
+5
+let str = "";
+let n = 5;
+for (i = 1; i <= n; i++) {
+ for (j = 5; i <= j; j--) {
+  str += j;
+ }
+ str += "\n";
+}
+console.log(str);
+
+*
+**
+* *
+*  *
+*   *
+******
+
+let n = 5;
+let str = "";
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= i; j++) {
+  if (j == 1 || j == i || i == n) {
+   str += "*";
+  } else {
+   str += " ";
+  }
+ }
+ str += "\n";
+}
+console.log(str);
+
+*****
+****
+***
+**
+*
+
+let n = 5;
+let str = "";
+for (i = 1; i <= n; i++) {
+ for (j = n; j >= i; j--) {
+  str += "*";
+ }
+ str += "\n";
+}
+console.log(str);
+
+A
+AA
+AAA
+AAAA
+AAAAA
+
+let str = "";
+let n = 5;
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= i; j++) {
+  str += "A";
+ }
+ str += "\n";
+}
+console.log(str);
+
+AAAAA
+AAAA
+AAA
+AA
+A
+
+
+let str = "";
+let n = 5;
+for (i = 1; i <= n; i++) {
+ for (j = n; j >= i; j--) {
+  str += "A";
+ }
+ str += "\n";
+}
+console.log(str);
+
+$
+$$
+$$$
+$$$$
+%%%%%
+%%%%
+%%%
+%%
+%
+
+let n = 9;
+let str = "";
+for (i = 1; i <= n; i++) {
+ if (i <= 4) {
+  for (j = 1; j <= i; j++) {
+   str += "$";
+  }
+ } else {
+  for (k = 5; k + 4 >= i; k--) {
+   str += "%";
+  }
+ }
+ str += "\n";
+}
+console.log(str);
+
+AAAAA
+AAAA
+AAA
+AA
+A
+
+B
+BB
+BBB
+BBBB
+BBBBB
+
+
+let n = 11;
+let str = "";
+for (i = 1; i <= n; i++) {
+ if (i <= 5) {
+  for (j = 5; j >= i; j--) {
+   str += "A";
+  }
+ } else if (i == 6) {
+  str += " ";
+ } else {
+  for (k = 7; k <= i; k++) {
+   str += "B";
+  }
+ }
+ str += "\n";
+}
+console.log(str);
+
+
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        *
+
+let n = 5;
+let str = "";
+for (i = 1; i <= n; i++) {
+ for (k = 1; k <= i - 1; k++) {
+  str += " ";
+ }
+ for (j = 1; j <= n + 1 - i; j++) {
+  str += "*";
+ }
+ str += "\n";
+}
+console.log(str);
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+let n = 5;
+let str = "";
+for (i = 1; i <= n; i++) {
+ for (j = 1; j <= n + 1 - i; j++) {
+  str += "*";
+ }
+ str += "\n";
+}
+console.log(str);
