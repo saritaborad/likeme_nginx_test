@@ -24,6 +24,24 @@ diff function and class component
 - function - simple and easy to read - function that accept props as argument and return JSX
 - Class - javascript class that extends React.component class - it has feature like life cycle method and state 
 
+HOC - a function that takes a component and returns new component 
+// A simple HOC that logs the component's props
+const withLogger = (WrappedComponent) => {
+  return class WithLogger extends React.Component {
+    componentDidMount() {
+      console.log('Props:', this.props);
+    }
+
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  };
+};
+
+// Usage of the HOC
+const EnhancedComponent = withLogger(MyComponent);
+
+
 render() - it returns JSX - it is called whenever updates to state or props 
 
 setState() - use to update state of component - when called react re-render component with updated state - any child component also re-render
@@ -186,6 +204,21 @@ querystring - provide method to parse and format url query string
 
 crypto - provide crypto graphic functionality 
 - generating hash, encrypting, decrypting data, working with signature
+
+--------------------------------------------------------
+File upload in nodejs
+--------------------------------------------------------
+const multer = require("multer")
+const storage = multer.diskStorage({
+  destination:(req,file,cb)=>{
+    cb(null,'uploads/')
+  }
+  filename:(req,file,cb)=>{
+    cb(null,Date.now())
+  }
+})
+
+const upload = multer({storage:storage})
 
 --------------------------------------------------------
 path module
@@ -364,13 +397,6 @@ diff sharding and replication
 
 mongostate -  provides a real-time, human-readable view  statistics
 
-
-
-
-
-
-
-
 --------------------------------------------------------
 lean()
 --------------------------------------------------------
@@ -383,7 +409,19 @@ Faster Serialization: -  plain JavaScript objects are usually faster to serializ
 Note:- lose some of the Mongoose-specific features and methods that documents provide
 
 
-
+--------------------------------------------------------
+                    MongoDB Query
+--------------------------------------------------------
+User.find({ age: { $gte: 21 } })
+User.updateOne({ name: 'John Doe' }, { age: 26 })
+User.updateMany({ age: { $lt: 21 } }, { $set: { isUnderage: true } })
+User.deleteOne({ name: 'John Doe' })
+User.deleteMany({ age: { $gte: 60 } })
+User.countDocuments({ age: { $gte: 21 } })
+User.aggregate([
+  { $match: { age: { $gte: 21 } } },
+  { $group: { _id: '$age', count: { $sum: 1 } } }
+]) // returns age wise total 
 
 
 --------------------------------------------------------
