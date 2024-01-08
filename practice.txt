@@ -54,16 +54,74 @@ React Router - way to define different routes and their corresponding component
 
 React Fragment - group multiple element togather without addition DOM element
 
+Feature of ReactJs
+- one-way-data-binding - parent to child  - keeps everything modular and fast 
+- High performance - react updates only those component which have changed, results in much faster response 
+
+Babel - web browser can not read jsx directly, because it can only read javascript
+- for jsx to run in browser, we need to transform it to javascript using babel
+
+interceptor -  mechanism that allows developers to intercept and modify the behavior of functions, methods, or events in a program
+- to check whether a user has the necessary permissions to access a particular resource.
+
+
 --------------------------------------------------------
 Hooks in react js 
 --------------------------------------------------------
 useState - manage state in function compo 
 useEffect - perform side effect in function comp (e.g data fetching, subscription, dom manipulation ) after rendering
 useContext - access value of context provider within function comp 
-useReducer - 
+useReducer - to manage more complex logic - alternative to useState hook - when state logic involves multiple sub values 
 useRef - creates a ref object that can hold value across render
 useMemo - memoize value to prevent un-necessary re-computation
 useCallback - memoize function to prevent un-necessary re-creation
+
+diff bet useEffect, useMemo and useCallback 
+useEffect 
+- for handling side effect, 
+- does not return value 
+- use when need to perform side effect 
+- not for performance optimization
+
+useMemo 
+- for memoizing values, 
+- returns memoized value 
+- use when need to memoize result of computation 
+- for performance optimization
+
+useCallback 
+- for memoizing callback function, 
+- returns memoized callback functions 
+- use when want to memoize callback computation 
+- for performance optimization
+
+
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+// Component using useReducer
+const Counter = () => {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <div>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
+    </div>
+  );
+};
+
+
 
 
 useMemo - use to memoize result of function or computation - prevent un-necessary execution of function 
@@ -73,6 +131,16 @@ useCallback - to memoize callback fun, preventing un -necessary re-creation of f
 - useful when passing callback as dependency to child component
 
 const handleClick = useCallback(()=>{},[])
+
+DOM - document object model 
+Dom manipulation 
+- it provides way to manipulate structure,style and content of web document
+- process of dynamically changing the structure, content, or style of a web page using JavaScript
+
+Strict mode - developer tool - help to identify common issues and potential problem in react app in dev mode 
+- it introduce additional check and warning to help catch mistakes 
+
+
 
 
 --------------------------------------------------------
@@ -149,7 +217,7 @@ export async function getServerSideProps() {
 }
 
 getStaticPaths function 
-- use for dynamic route generation in nextjs 
+- use for dynamic route generation in nextjs  
 
 --------------------------------------
 Diff getServerSideProps and useEffect
@@ -376,7 +444,7 @@ performance improve
 - lean method 
 
 $lookup
-- performs left out join net current collection and another collection 
+- performs left out join with current collection and another collection 
 {
   $lookup: {
     from: "foreignCollection",

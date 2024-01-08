@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {API_PATH} from '../const'
+import {API_PATH, ApiBaseUrl} from '../const'
 import Cookies from 'js-cookie'
 
 let tokenData
@@ -15,6 +15,21 @@ let config = {
   },
   withCredentials: true,
 }
+
+const axiosInstance = axios.create({baseURL: ApiBaseUrl})
+axiosInstance.defaults.withCredentials = true
+axiosInstance.interceptors.request.use(
+  (config: any) => {
+    let token = document.cookie
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
+    return config
+  },
+  (error) => {
+    return error
+  }
+)
 
 // console.log(config)
 

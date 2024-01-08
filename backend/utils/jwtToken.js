@@ -8,4 +8,5 @@ const tokenFromCookie = (cookie) => {
  const authtokenMatch = /authtoken=([^;]*)/.exec(cookie);
  return authtokenMatch ? authtokenMatch[1] : null;
 };
+
 module.exports = { sendToken, tokenFromCookie };
