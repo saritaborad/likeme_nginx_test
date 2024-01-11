@@ -515,3 +515,33 @@ exports.changeImage = asyncHandler(async (req, res) => {
 
  return giveresponse(res, 200, true, "success");
 });
+
+exports.captureNetworkRequests = asyncHandler(async (req, res, next) => {
+ const { targetURL } = req.body;
+ const browser = await puppeteer.launch();
+ const page = await browser.newPage();
+
+ await page.setRequestInterception(true);
+
+ page.on("request", (request) => {
+  request.continue();
+ });
+
+ const requests = [];
+ page.on("response", (response) => {
+  requests.push({
+   url: response.url(),
+   status: response.status(),
+   method: response.request().method(),
+  });
+ });
+
+ await page.goto(targetURL);
+ const filteredUrls = requests.filter((entry) => entry.url.includes("/_next/data/") && entry.url.includes("/challan-search.json")).map((entry) => entry.url);
+ await browser.close();
+
+ const dynamicParameter = getDynamicParams(filteredUrls[0]);
+ const reconstructedUrl = `https://www.carinfo.app/_next/data/${dynamicParameter}/challan-search.json`;
+
+ return giveresponse(res, 200, true, "success", reconstructedUrl);
+});

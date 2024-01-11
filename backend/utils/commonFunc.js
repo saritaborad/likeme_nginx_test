@@ -73,4 +73,13 @@ function compressVideo(inputBuffer) {
    .pipe();
  });
 }
-module.exports = { generateCode, deleteFile, isValidObjectId, generateThumb, compressVideo };
+
+const getDynamicParams = (url) => {
+ const regex = /\/_next\/data\/(.*?)\/challan-search.json/;
+ const match = url.match(regex);
+ const dynamicParameter = match ? match[1] : null;
+
+ return dynamicParameter;
+};
+
+module.exports = { generateCode, deleteFile, isValidObjectId, generateThumb, compressVideo, getDynamicParams };
