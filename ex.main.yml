@@ -1,0 +1,42 @@
+name: Snapcial Backendv And Frontend API version
+
+on:
+ push:
+  branches:
+   - master
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+
+  strategy:
+   matrix:
+    node-version: [19.x]
+
+  steps:
+   - name: Checkout Repository
+     uses: actions/checkout@v2
+
+   - name: Set up Node.js
+     uses: actions/setup-node@v3
+     with:
+      node-version: ${{ matrix.node-version }}
+
+   - name: Install Dependencies
+     run: npm --version
+
+   - name: Deploying using ssh
+     uses: appleboy/ssh-action@master
+     with:
+      host: ${{ secrets.HOSTNAME }}
+      username: ${{ secrets.USERNAME }}
+      password: ${{ secrets.PASSWORD }}
+      port: 22
+      script: |
+       cd /var/www/groworbit/public_html/photo_snapcial2023/admin_photo_snapcial
+       cd backend
+       sudo rm -rf node_modules
+       sudo git pull origin master
+       sudo npm install
+       pm2 list
+       pm2 restart 16
