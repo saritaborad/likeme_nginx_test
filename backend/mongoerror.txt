@@ -1,0 +1,20 @@
+
+=> sudo journalctl -xe | grep mongod
+
+ERROR:- 
+Loaded: loaded (/lib/systemd/system/mongod.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Thu 2023-11-30 04:18:07 UTC; 5s ago
+       Docs: https://docs.mongodb.org/manual
+    Process: 1142736 ExecStart=/usr/bin/mongod --config /etc/mongod.conf (code=exited, status=14)
+   Main PID: 1142736 (code=exited, status=14)
+        CPU: 28ms
+
+ Started MongoDB Database Server.
+ mongod.service: Main process exited, code=exited, status=14/n/a
+ mongod.service: Failed with result 'exit-code'
+
+solution :-
+ => sudo chown -R mongodb:mongodb /var/lib/mongodb
+ => sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+ => sudo systemctl restart mongod
+ => sudo systemctl status mongod

@@ -76,3 +76,145 @@ exports.changeArrOfDb = asyncHandler(async (req, res) => {
 
   return giveresponse(res, 200, true, "Data processing complete");
 });
+
+
+
+=> how to create mongo url with auth source admin db
+
+=>switch to admin 
+  => use admin;
+
+=>create user 
+  => db.createUser({user: "athhTech",pwd: "athhTech@123",roles: [{ role: "userAdminAnyDatabase", db: "admin" },{ role: "readWriteAnyDatabase", db: "admin" }]})
+
+=> check user 
+  => db.getUsers()
+
+=>check connection to db 
+  - mongo --host 139.59.102.5 --port 27017 -u athhTech -p
+  - mongo --username athhTech --password bharatAthhTech" --host 139.59.84.109 --port 27017 --authenticationDatabase admin
+
+=>mongo url will be 
+  - mongodb://athhTech:athhTech@123@139.59.102.5:27017/likeme?authSource=admin
+
+
+
+
+
+ const pipeline = [
+  {
+   $group: {
+    _id: null,
+    users: { $sum: 1 },
+    hostApps: { $sum: { $cond: [{ $and: [{ $eq: ["$is_block", 0] }, { $eq: ["$is_host", 1] }] }, 1, 0] } },
+    blockHost: { $sum: { $cond: [{ $and: [{ $eq: ["$is_host", 2] }, { $eq: ["$is_block", 1] }] }, 1, 0] } },
+    hosts: { $sum: { $cond: [{ $and: [{ $eq: ["$is_host", 2] }, { $eq: ["$is_fake", 0] }] }, 1] } },
+   },
+  },
+  { $lookup: { from: "reports", localField: "_id", foreignField: "userId", as: "reports" } },
+  { $addFields: { reportsCount: { $size: "$reports" } } },
+ 
+ ];
+
+Message.find({ type: 1 }).select("title -_id").lean()
+ use the lean() method 
+ => when querying the database to retrieve plain JavaScript objects rather than Mongoose documents, 
+ => which can be faster if you don't need the full Mongoose features.
+
+ Concurrent Fetching: 
+ => You can fetch messages and images concurrently using Promise.all to improve performance. 
+ => This can help reduce the time taken to fetch data from the database
+
+------------------------ lean() -------------------
+ => The benefits of using lean() for faster API response times are:
+
+Reduced Overhead:
+Mongoose documents come with additional metadata and methods that you might not need when simply retrieving data from the database. Using lean() reduces this overhead.
+
+Memory Efficiency: 
+Mongoose documents can consume more memory, especially when working with large result sets. lean() returns plain JavaScript objects, which can be more memory-efficient.
+
+Faster Serialization: 
+When you're preparing data for an API response, plain JavaScript objects are usually faster to serialize into JSON, as there's less data to process.
+
+However, it's important to note that when you use lean(), you lose some of the Mongoose-specific features and methods that documents provide. For example, you won't be able to call Mongoose document methods on the result.
+
+Whether or not to use lean() depends on your specific use case. If you don't need the features provided by Mongoose documents and you prioritize performance, using lean() can be a good choice. Just be aware of the trade-offs and make sure it aligns with your application's requirements.
+
+
+------------------------------------------------------------------
+exports.changeArrOfDb = asyncHandler(async (req, res) => {
+  const user = await User.find();
+  const country = await Country.find();
+
+  const userData = await readFile(path.join(__dirname, "../dbJson/user1.json"), "utf-8");
+
+  const userJson = JSON.parse(userData);
+
+  const userMapping = new Map();
+  const countryMapping = new Map();
+
+  // Build a mapping between old and new values for users => {111:"dfishffef8e8"}
+  for (const u of user) {
+    userMapping.set(u.id, u._id);
+  }
+
+  // Build a mapping between old and new values for countries
+  for (const c of country) {
+    countryMapping.set(c.id, c._id);
+  }
+
+  for (const user1 of userJson.data) {
+    const inte_arr = (user1.save_profile || []).map(id => userMapping.get(id)).filter(Boolean);
+    const cont_arr = (user1.interested_country || []).map(id => countryMapping.get(id)).filter(Boolean);
+    const block_arr = (user1.is_block_list || []).map(id => userMapping.get(id)).filter(Boolean);
+
+    await User.findOneAndUpdate(
+      { id: user1.id },
+      { $set: { save_profile: inte_arr, interested_country: cont_arr, is_block_list: block_arr } },
+      { new: true }
+    );
+  }
+
+  return giveresponse(res, 200, true, "Data processing complete");
+});
+
+
+------------------
+field wise search 
+------------------
+
+ search() {
+  const search = this.queryStr?.search ? { name: { $regex: this.queryStr.search, $options: "i" } } : {};
+
+  let obj = {};
+  if (Object.keys(search).length !== 0) {
+   Object.keys(search).map((x) => {
+    if (search[x]) {
+     if (/^\+\d+-?\d+$/.test(search[x])) {
+      obj[x] = search[x];
+     } else if (/(0?[1-9]|[12]\d|30|31)[^\w\d\r\n:](0?[1-9]|1[0-2])[^\w\d\r\n:](\d{4}|\d{2})/.test(search[x])) {
+      const dateParts = search[x]?.split("-");
+      const formattedDate = `${dateParts?.[2]}-${dateParts?.[1]}-${dateParts?.[0]}`;
+      const parsedDate = new Date(formattedDate);
+      const nextDay = new Date(formattedDate);
+      nextDay.setDate(parsedDate.getDate() + 1);
+      obj[x] = { $gte: parsedDate, $lte: nextDay };
+     } else if (!isNaN(Number(search[x]))) {
+      obj[x] = Number(search[x]);
+     } else {
+      if (search[x][0] === "$") {
+       obj[x] = search[x];
+      } else {
+       if (x !== "createdAt") {
+        obj[x] = { $regex: new RegExp(".*" + search[x] + ".*", "i") };
+       }
+      }
+     }
+    }
+   });
+  }
+
+  this.query = this.query.find({ ...search });
+  return this;
+ }
