@@ -1,0 +1,44 @@
+=> closure 
+  - javascript feature that allows function to remember the variable from outer scope even after that scope has finished executing.
+  - a closure allows a function to maintain access to the variables of its containing (enclosing) function, even when the containing function has completed execution.
+
+function outerFunction() {
+  let outerVariable = 'I am from the outer function';
+
+  function innerFunction() {
+    console.log(outerVariable); // Accessing outerVariable from the outer scope
+  }
+
+  return innerFunction;
+}
+
+const closureExample = outerFunction();
+closureExample(); // This will log: "I am from the outer function"
+
+
+var:
+Function Scope: Variables declared with var are function-scoped. 
+- only accessible within the function where they are declared. 
+- If declared outside any function, they become global variables.
+
+Hoisting: Variables declared with var are hoisted to the top of their scope,
+ which means they are moved to the top of the function or global context during the compilation phase.
+
+Reassignment and Redefinition: Variables declared with var can be both reassigned and redefined.
+
+let:
+Block Scope: 
+- Variables declared with let are block-scoped. 
+- They are only accessible within the block (enclosed by curly braces) where they are defined, whether that block is a loop, condition, or a function.
+
+Hoisting: Like var, variables declared with let are hoisted to the top of their block, 
+but the temporal dead zone prevents accessing them before the declaration.
+
+Reassignment: Variables declared with let can be reassigned, but not redefined.
+
+const:
+Block Scope: Like let, variables declared with const are block-scoped.
+
+Hoisting: const is also hoisted, but just like let, it's not accessible in the temporal dead zone.
+
+Reassignment and Redefinition: Variables declared with const cannot be reassigned or redefined. However, for objects and arrays declared with const, the properties or elements inside them can be modified.

@@ -143,6 +143,7 @@ exports.registerFast = asyncHandler(async (req, res, next) => {
  }
 });
 
+useMemo(() => a + b, [a, b]);
 exports.getFast = asyncHandler(async (req, res, next) => {
  const user = await User.findOne({ device_id: req.body.device_id }).populate({ path: "video images country_data", select: "-createdAt -updatedAt -id -__v" });
  if (!user) return giveresponse(res, 404, false, "User not found");
