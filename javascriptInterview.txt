@@ -42,3 +42,27 @@ Block Scope: Like let, variables declared with const are block-scoped.
 Hoisting: const is also hoisted, but just like let, it's not accessible in the temporal dead zone.
 
 Reassignment and Redefinition: Variables declared with const cannot be reassigned or redefined. However, for objects and arrays declared with const, the properties or elements inside them can be modified.
+
+Temporal Dead Zone (TDZ):-
+- concept in JavaScript that refers to the time span between the entering of the scope where a variable is declared and the actual declaration of the variable. During this period, any attempt to access the variable results in a ReferenceError.
+
+This concept is particularly relevant for variables declared using let and const because they exhibit block scoping behavior.
+
+For let and const, the TDZ starts at the beginning of the block where the variable is declared and continues until the actual declaration. During this period, any attempt to access or reference the variable results in an error
+In the case of var, it is hoisted to the top of its scope, and the variable is accessible throughout the entire scope, even before the actual declaration. 
+
+Synthetic Events:
+Synthetic events in React are events that are normalized by React to ensure consistent behavior across different browsers. React wraps the native browser events in its own synthetic event system. This system is designed to abstract away the differences in event handling between various browsers, providing a consistent and predictable interface for handling events in React components.
+
+Native (Non-Synthetic) Events:
+Native events refer to the browser's native event system. These events are provided by the browser and are not normalized or abstracted by React. When you use native events, you directly interact with the browser's event system.
+
+setTimeout:
+Usage:
+
+setTimeout is used to execute a function or a piece of code once after a specified delay.
+
+setInterval:
+Usage:
+
+setInterval is used to repeatedly execute a function or a piece of code at a specified interval.
