@@ -270,7 +270,7 @@ exports.changeArrOfDb = asyncHandler(async (req, res) => {
  const country = await Country.find();
 
  const countryData = await readFile(path.join(__dirname, "../dbJson/country.json"), "utf-8");
- const userData = await readFile(path.join(__dirname, "../dbJson/user1.json"), "utf-8");
+ const userData = await readFile(path.join(__dirname, "../dbJson/user.json"), "utf-8");
 
  countryJson = JSON.parse(countryData);
  userJson = JSON.parse(userData);

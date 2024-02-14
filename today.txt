@@ -1,5 +1,5 @@
-16/01/24
-=> server mongodb install 
-=> server likeme.live file setup 
-=> likeme server setup 
-=> likeme code live
+05/02/24
+=> socket live issue resolved 
+=> image not found issue resolved 
+=> changes in fetchblocklist api 
+=> changes in get_saved_profile api

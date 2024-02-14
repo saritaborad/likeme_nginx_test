@@ -1,0 +1,5208 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "version": "1.0.0",
+  "title": "REST API",
+  "description": ""
+ },
+ "host": "likeme.live/likeme",
+ "basePath": "/api",
+ "schemes": ["https"],
+ "paths": {
+  "/login": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_type": {
+         "example": "any"
+        },
+        "username": {
+         "example": "any"
+        },
+        "password": {
+         "example": "any"
+        },
+        "is_remember": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/logout": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addRelationalDB": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addNormalDB": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "dbName": {
+         "example": "any"
+        },
+        "jsonFile": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/changeArrOfDb": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addUserIdToDB": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "jsonFile": {
+         "example": "any"
+        },
+        "dbName": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/changeJSON": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteDuplicateFromUser": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/changeImage": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getAdmobData": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllagent": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addAgent": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "example": "any"
+        },
+        "email_id": {
+         "example": "any"
+        },
+        "password": {
+         "example": "any"
+        },
+        "phone_no": {
+         "example": "any"
+        },
+        "contry": {
+         "example": "any"
+        },
+        "status": {
+         "example": "any"
+        },
+        "coins": {
+         "example": "any"
+        },
+        "coins_rate": {
+         "example": "any"
+        },
+        "stream_minits": {
+         "example": "any"
+        },
+        "stream_rate": {
+         "example": "any"
+        },
+        "images": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/editAgent": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "example": "any"
+        },
+        "email_id": {
+         "example": "any"
+        },
+        "password": {
+         "example": "any"
+        },
+        "phone_no": {
+         "example": "any"
+        },
+        "contry": {
+         "example": "any"
+        },
+        "status": {
+         "example": "any"
+        },
+        "_id": {
+         "example": "any"
+        },
+        "images": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteAgent": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAgents": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAgentById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getAgentHosts": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getHostAgents": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllStreamHistory": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchStreamHistoryDayWise": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllHostHistory": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostSummary": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllCountry": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addCountry": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "country_name": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateCountry": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "country_name": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteCountry": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/country_list": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addfakeUser": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "country_id": {
+         "example": "any"
+        },
+        "about": {
+         "example": "any"
+        },
+        "bio": {
+         "example": "any"
+        },
+        "age": {
+         "example": "any"
+        },
+        "fullName": {
+         "example": "any"
+        },
+        "images": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllFakeUser": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllgifts": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addGifts": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "diamond": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/editGift": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "diamond": {
+         "example": "any"
+        },
+        "images": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteGift": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/giftList": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHost_name": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/blockUnblockHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "is_block": {
+         "example": "any"
+        },
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/hostblock": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/makeHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHosts": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllFakeHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteHostById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/featureUpdate": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "is_feature": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addHostImages": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addHostVideos": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "video_link": {
+         "example": "any"
+        },
+        "is_one_to_one": {
+         "example": "any"
+        },
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/hostUpdate": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "fullName": {
+         "example": "any"
+        },
+        "agent_id": {
+         "example": "any"
+        },
+        "age": {
+         "example": "any"
+        },
+        "bio": {
+         "example": "any"
+        },
+        "billingAddress": {
+         "example": "any"
+        },
+        "about": {
+         "example": "any"
+        },
+        "country_id": {
+         "example": "any"
+        },
+        "availabiltyHours": {
+         "example": "any"
+        },
+        "email": {
+         "example": "any"
+        },
+        "diamond_per_min": {
+         "example": "any"
+        },
+        "intrests": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/hostById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostWorkhistory": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/applyForHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "example": "any"
+        },
+        "availabiltyHours": {
+         "example": "any"
+        },
+        "billingAddress": {
+         "example": "any"
+        },
+        "bio": {
+         "example": "any"
+        },
+        "intrests": {
+         "example": "any"
+        },
+        "about": {
+         "example": "any"
+        },
+        "age": {
+         "example": "any"
+        },
+        "email": {
+         "example": "any"
+        },
+        "country_id": {
+         "example": "any"
+        },
+        "diamond_per_min": {
+         "example": "any"
+        },
+        "fullName": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostProfiles": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "country_id": {
+         "example": "any"
+        },
+        "is_fake": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/hostProfileUpdate": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "intrests": {
+         "example": "any"
+        },
+        "availabiltyHours": {
+         "example": "any"
+        },
+        "billingAddress": {
+         "example": "any"
+        },
+        "bio": {
+         "example": "any"
+        },
+        "about": {
+         "example": "any"
+        },
+        "age": {
+         "example": "any"
+        },
+        "email": {
+         "example": "any"
+        },
+        "country_id": {
+         "example": "any"
+        },
+        "fullName": {
+         "example": "any"
+        },
+        "diamond_per_min": {
+         "example": "any"
+        },
+        "image_id": {
+         "example": "any"
+        },
+        "video_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/get_host_profile": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "host_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHost_historyAPI": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "payment": {
+         "example": "any"
+        },
+        "id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostProfiles_one_to_one": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllHost_historyApi": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/get_host_profile_one_to_one": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "host_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostProfilesNew": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "country_id": {
+         "example": "any"
+        },
+        "is_fake": {
+         "example": "any"
+        },
+        "skip": {
+         "example": "any"
+        },
+        "limit": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/find_random_host": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/blockHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "host_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/unblockHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "host_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/ImageById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteImageById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostImages": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllImageReview": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/acceptImageReview": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/rejectImageReview": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/multiUser": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/verify_token": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "authtoken": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/logOut": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllUser": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/AddCoin": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "diamond": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/userblock": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "is_block": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchDashboardCount": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAgentDashboard": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/register": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "identity": {
+         "example": "any"
+        },
+        "deviceType": {
+         "example": "any"
+        },
+        "loginType": {
+         "example": "any"
+        },
+        "deviceToken": {
+         "example": "any"
+        },
+        "fullName": {
+         "example": "any"
+        },
+        "package_name": {
+         "example": "any"
+        },
+        "email": {
+         "example": "any"
+        },
+        "one_signal_id": {
+         "example": "any"
+        },
+        "gender": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/registerFast": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "device_id": {
+         "example": "any"
+        },
+        "identity": {
+         "example": "any"
+        },
+        "gender": {
+         "example": "any"
+        },
+        "deviceType": {
+         "example": "any"
+        },
+        "loginType": {
+         "example": "any"
+        },
+        "deviceToken": {
+         "example": "any"
+        },
+        "fullName": {
+         "example": "any"
+        },
+        "package_name": {
+         "example": "any"
+        },
+        "email": {
+         "example": "any"
+        },
+        "one_signal_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getFast": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "device_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/userProfileUpdate": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "fullName": {
+         "example": "any"
+        },
+        "loginType": {
+         "example": "any"
+        },
+        "email": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/userVersionUpdate": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "version": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateUserCallStatus": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "my_user_id": {
+         "example": "any"
+        },
+        "call_status": {
+         "example": "any"
+        },
+        "to_user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/remove_from_save": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "host_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/get_saved_profile": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "start": {
+         "example": "any"
+        },
+        "limit": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getUserProfile": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/delete_profile": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/save_profile": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "host_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/interestedCountry": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "country_list": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/userlanguage": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "language": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/diamondPluse": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/diamondMinus": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "type": {
+         "example": "any"
+        },
+        "host_id": {
+         "example": "any"
+        },
+        "diamond": {
+         "example": "any"
+        },
+        "spend_type": {
+         "example": "any"
+        },
+        "package_name": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/diamondUpdate": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "diamond": {
+         "example": "any"
+        },
+        "user_id": {
+         "example": "any"
+        },
+        "genrated_id": {
+         "example": "any"
+        },
+        "sku": {
+         "example": "any"
+        },
+        "purchase_token": {
+         "example": "any"
+        },
+        "GPA_TOKEN": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/listOrder": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchBlockList": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/host_live_stream_track": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "host_id": {
+         "example": "any"
+        },
+        "event": {
+         "example": "any"
+        },
+        "session": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/host_live_stream_track_history": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "host_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/host_live_stream_track_history_list": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "host_id": {
+         "example": "any"
+        },
+        "from": {
+         "example": "any"
+        },
+        "to": {
+         "example": "any"
+        },
+        "zone": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/onOff_video_call": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "is_video_call": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteVideoById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/videoById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostVideos": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllVideoReview": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/acceptVideoReview": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/rejectVideoReview": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllMessages": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addMessage": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteMessageById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateMessage": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "title": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fakeMessagesList": {
+   "get": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/sendNotification": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "example": "any"
+        },
+        "description": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/notificationRemove": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/sendNotificationToUsers": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "username": {
+         "example": "any"
+        },
+        "identity": {
+         "example": "any"
+        },
+        "diamond_per_min": {
+         "example": "any"
+        },
+        "agoraToken": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/adminSendNotification": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "example": "any"
+        },
+        "description": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllNotification": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateNotification": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "title": {
+         "example": "any"
+        },
+        "description": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteNotificationyById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addNotificationAdmin": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "example": "any"
+        },
+        "description": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchNotificationAdmin": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateNotificationAdmin": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "title": {
+         "example": "any"
+        },
+        "description": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteNotificationAdmin": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getNotificationTable": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addNotificationCredential": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "package_name": {
+         "example": "any"
+        },
+        "fcm_key": {
+         "example": "any"
+        },
+        "device_type": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getNotificationCredential": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateNotificationCredential": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "package_name": {
+         "example": "any"
+        },
+        "fcm_key": {
+         "example": "any"
+        },
+        "device_type": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteNotificationCredential": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchNotification": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "skip": {
+         "example": "any"
+        },
+        "limit": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addPageData": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "description": {
+         "example": "any"
+        },
+        "type": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getPageData": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/privacy_policy": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/terms_conditions": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/privacyPolicy": {
+   "get": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllPayment": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addPayment": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "payment_getway": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updatePayment": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "payment_getway": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deletePaymentById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/PaymentGetWayList": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/completeRedeem": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "amount_paid": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchRedeems": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "request_status": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllRedeems": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "agent_id": {
+         "example": "any"
+        },
+        "request_status": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/rejectRedeem": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchRedeemRequests": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "start": {
+         "example": "any"
+        },
+        "limit": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/placeRedeemRequest": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/placeRedeemRequestAll": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "account_info": {
+         "example": "any"
+        },
+        "payment_getway_title": {
+         "example": "any"
+        },
+        "agent_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteReport": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchReports": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/report": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "user_id": {
+         "example": "any"
+        },
+        "reason": {
+         "example": "any"
+        },
+        "description": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchHostApplications": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/viewHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/requestUserById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/RejectHost": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getSettingData": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateSettingApp": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "app_name": {
+         "example": "any"
+        },
+        "default_diamond": {
+         "example": "any"
+        },
+        "amount_per_diamond": {
+         "example": "any"
+        },
+        "currency": {
+         "example": "any"
+        },
+        "min_threshold": {
+         "example": "any"
+        },
+        "min_diamonds_charge_for_going_live": {
+         "example": "any"
+        },
+        "watch_ad_diamond": {
+         "example": "any"
+        },
+        "user_message_charge": {
+         "example": "any"
+        },
+        "host_message_charge": {
+         "example": "any"
+        },
+        "host_call_charge": {
+         "example": "any"
+        },
+        "host_live_Percentage": {
+         "example": "any"
+        },
+        "minimumMinuts": {
+         "example": "any"
+        },
+        "chargeForLive": {
+         "example": "any"
+        },
+        "max_live_time": {
+         "example": "any"
+        },
+        "max_live_private_time": {
+         "example": "any"
+        },
+        "agora_app_id": {
+         "example": "any"
+        },
+        "agora_app_cert": {
+         "example": "any"
+        },
+        "_id": {
+         "example": "any"
+        },
+        "match_call_coin": {
+         "example": "any"
+        },
+        "match_call_second": {
+         "example": "any"
+        },
+        "max_fake_live_hosts": {
+         "example": "any"
+        },
+        "fake_host_vidoe_from": {
+         "example": "any"
+        },
+        "liveSwitch": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateAdmob": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "type": {
+         "example": "any"
+        },
+        "rewarded_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getAdmob": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "type": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/all_setting": {
+   "get": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/generateAgoraToken": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "channelName": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/editAgoraToken": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "agora_app_id": {
+         "example": "any"
+        },
+        "agora_app_cert": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllCoinPlans": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "package_name": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addSubcription": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "price": {
+         "example": "any"
+        },
+        "discount_price": {
+         "example": "any"
+        },
+        "diamond": {
+         "example": "any"
+        },
+        "play_store_id": {
+         "example": "any"
+        },
+        "app_store_id": {
+         "example": "any"
+        },
+        "orignal_sku": {
+         "example": "any"
+        },
+        "highlight_text": {
+         "example": "any"
+        },
+        "package_name": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/subcriptionById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateSubcription": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "discount_price": {
+         "example": "any"
+        },
+        "price": {
+         "example": "any"
+        },
+        "diamond": {
+         "example": "any"
+        },
+        "play_store_id": {
+         "example": "any"
+        },
+        "app_store_id": {
+         "example": "any"
+        },
+        "orignal_sku": {
+         "example": "any"
+        },
+        "highlight_text": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteSubcriptionById": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/default_flag": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/allSubcription": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "package_name": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllPurchaseHistory": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "gain_type": {
+         "example": "any"
+        },
+        "package_name": {
+         "example": "any"
+        },
+        "from": {
+         "example": "any"
+        },
+        "to": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllSpendHistory": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/getPackageName": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllSortPurchased": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/notiSortPurchased": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "message": {
+         "example": "any"
+        },
+        "description": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/fetchAllReportReson": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/addReportReson": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "title": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/updateReportReson": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        },
+        "title": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/deleteReportReson": {
+   "post": {
+    "description": "",
+    "parameters": [
+     {
+      "name": "authorization",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "cookie",
+      "in": "header",
+      "type": "string"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "schema": {
+       "type": "object",
+       "properties": {
+        "_id": {
+         "example": "any"
+        }
+       }
+      }
+     }
+    ],
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/reportReson": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/img": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  },
+  "/video": {
+   "post": {
+    "description": "",
+    "responses": {
+     "default": {
+      "description": ""
+     }
+    }
+   }
+  }
+ }
+}

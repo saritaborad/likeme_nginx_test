@@ -23,6 +23,5 @@ router.use("/", require("./Setting"));
 router.use("/", require("./Subcription"));
 router.use("/", require("./Purchase"));
 router.use("/", require("./ReportReason"));
-router.use("/carInfo", captureNetworkRequests);
 
 module.exports = router;

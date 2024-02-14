@@ -218,3 +218,28 @@ field wise search
   this.query = this.query.find({ ...search });
   return this;
  }
+
+ find max id stored as string from mongo using aggregation 
+ --------------------------------------------------------
+ db.yourCollection.aggregate([  {    $group: {      _id: null,      maxId: { $max: { $toInt: "$id" } }    }  }]);
+
+ find max age from mongo using aggregation 
+ -----------------------------------------
+ db.yourCollection.aggregate([  {    $group: {      _id: null,      maxAge: { $max: "$age" }    }  }]);
+
+ find duplicate entry of id 
+ --------------------------
+ const user = await User.aggregate([{ $group: { _id: "$id", count: { $sum: 1 }} }, { $match: { count: { $gt: 1 } } }]);
+
+delete duplicate id from mongo 
+------------------------------
+
+exports.deleteDuplicate = asyncHandler(async (req, res) => {
+ const user = await User.aggregate([{ $group: { _id: "$id", count: { $sum: 1 }, docs: { $push: "$_id" } } }, { $match: { count: { $gt: 1 } } }]);
+
+ user.forEach(async function (duplicate) {
+  var keepId = duplicate.docs[0]; // Keep the first _id, delete the rest
+  await User.deleteMany({ _id: { $in: duplicate.docs, $ne: keepId } });
+ });
+ return giveresponse(res, 200, true, "success");
+});
